@@ -233,6 +233,14 @@ label,
   margin-bottom: 11px;
 }
 
+.requiredField{
+  font-size:0.6rem;
+  font-weight:400;
+  font-style: italic;
+  margin-left:10px;
+  color:#e54858;
+}
+
 .text-label {
   margin-bottom: 0;
 }

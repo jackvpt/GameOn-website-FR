@@ -5,6 +5,7 @@
     <title>Reservation</title>
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <link rel="stylesheet" href="modal.css" />
+    <link href="./favicon.png" rel="icon" type="image/png">
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -61,7 +62,7 @@
               novalidate
             >
               <div class="formData">
-                <label for="first">Prénom</label><br />
+                <label for="first">Prénom</label><span class="requiredField">(Champ obligatoire)</span><br />
                 <input
                   class="text-control"
                   type="text"
@@ -75,7 +76,7 @@
               </div>
 
               <div class="formData">
-                <label for="last">Nom</label><br />
+                <label for="last">Nom</label><span class="requiredField">(Champ obligatoire)</span><br />
                 <input
                   class="text-control"
                   type="text"
@@ -89,7 +90,7 @@
               </div>
 
               <div class="formData">
-                <label for="email">E-mail</label><br />
+                <label for="email">E-mail</label><span class="requiredField">(Champ obligatoire)</span><br />
                 <input
                   class="text-control"
                   type="email"
@@ -103,7 +104,7 @@
               </div>
 
               <div class="formData">
-                <label for="birthdate">Date de naissance</label><br />
+                <label for="birthdate">Date de naissance</label><span class="requiredField">(Champ obligatoire)</span><br />
                 <input
                   class="text-control"
                   type="date"
