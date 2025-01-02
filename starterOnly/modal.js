@@ -39,6 +39,7 @@ closeBtn.addEventListener("click", closeModal)
 // launch modal form
 function launchModal() {
   modalbg.style.display = "flex"
+  modalBody.style.display = "flex"
   modalBodySubmit.style.display = "none"
 }
 
@@ -48,61 +49,60 @@ function closeModal() {
 }
 
 function checkFirstName() {
-  if (first.value.trim().length < 2) {
+  if (!first.checkValidity()) {
     errorFirst.textContent =
       "Veuillez entrer 2 caractères ou plus pour le champ du prénom"
-    first.style.border = "2px solid red"
+    first.classList.add("input-invalid")
     return false
   }
   errorFirst.textContent = ""
-  first.style.border = "none"
+  first.classList.remove("input-invalid")
   return true
 }
 
 function checkLastName() {
-  if (last.value.trim().length < 2) {
+  if (!last.checkValidity()) {
     errorLast.textContent =
       "Veuillez entrer 2 caractères ou plus pour le champ du prénom"
-    last.style.border = "2px solid red"
-    return false
+      first.classList.add("input-invalid")
+      return false
   }
   errorLast.textContent = ""
-  last.style.border = "none"
+  first.classList.remove("input-invalid")
   return true
 }
 
 function checkEmail() {
-  const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
-  if (!emailPattern.test(email.value)) {
+  if (!email.checkValidity()) {
     errorEmail.textContent = "Veuillez entrer une adresse e-mail valide."
     isValid = false
-    email.style.border = "2px solid red"
+    first.classList.add("input-invalid")
     return false
   }
   errorEmail.textContent = ""
-  email.style.border = "none"
+  first.classList.remove("input-invalid")
   return true
 }
 
 function checkBirthdate() {
-  if (!birthdate.value) {
+  if (!birthdate.checkValidity()) {
     errorBirthdate.textContent = "Vous devez entrer votre date de naissance."
-    birthdate.style.border = "2px solid red"
+    first.classList.add("input-invalid")
     return false
   }
   errorBirthdate.textContent = ""
-  birthdate.style.border = "none"
+  first.classList.remove("input-invalid")
   return true
 }
 
 function checkQuantity() {
-  if (quantity.value === "" || quantity.value < 0 || quantity.value > 99) {
+  if (!quantity.checkValidity() ) {
     errorQuantity.textContent = "Veuillez entrer un nombre entre 0 et 99."
-    quantity.style.border = "2px solid red"
+    first.classList.add("input-invalid")
     return false
   }
   errorQuantity.textContent = ""
-  quantity.style.border = "none"
+  first.classList.remove("input-invalid")
   return true
 }
 
@@ -120,8 +120,7 @@ function checkLocation() {
 
 function checkConditions() {
   if (!checkbox1.checked) {
-    errorCheckbox1.textContent =
-      "Vous devez vérifier que vous acceptez les termes et conditions."
+    errorCheckbox1.textContent = "Vous devez accepter les termes et conditions."
     return false
   }
   errorCheckbox1.textContent = ""
@@ -129,7 +128,7 @@ function checkConditions() {
 }
 
 function validate(event) {
-  event.preventDefault() // Empêche la soumission par défaut
+  event.preventDefault()
 
   let isValid = true
 
@@ -142,18 +141,10 @@ function validate(event) {
   if (!checkConditions()) isValid = false
 
   if (isValid) {
-    first.value = ""
-    last.value = ""
-    email.value = ""
-    birthdate.value = ""
-    quantity.value = ""
-    const radios = document.querySelectorAll('input[name="location"]')
-    radios.forEach((radio) => (radio.checked = false))
-    checkbox1.checked = false
-    checkbox2.checked = false
+    document.forms["reserve"].reset()
     modalBody.style.display = "none"
     modalBodySubmit.style.display = "flex"
   }
 
-  return isValid // Empêche la soumission si isValid est false
+  return isValid
 }

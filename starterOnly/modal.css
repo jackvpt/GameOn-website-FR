@@ -125,8 +125,6 @@ main {
   margin: 1px 20px 15px;
   border-radius: 2rem;
   text-align: justify;
-
-
 }
 
 .modal-btn {
@@ -186,7 +184,7 @@ main {
 .content {
   display:flex;
   flex-direction: column;
-  margin: 5% auto;
+  margin: auto;
   width: 100%;
   max-width: 500px;
   min-height: 80%;
@@ -194,7 +192,7 @@ main {
   animation-duration: var(--modal-duration);
   background: #232323;
   border-radius: 10px;
-  overflow: hidden;
+  overflow: auto;
   position: relative;
   color: #fff;
   padding-top: 10px;
@@ -243,6 +241,10 @@ input {
   padding: 8px;
   border: 0.8px solid #ccc;
   outline: none;
+}
+
+.input-invalid{
+  border : 2px solid #e54858;
 }
 
 .text-control {
@@ -398,6 +400,10 @@ input[data-error]::after {
   color: #fff;
   cursor: pointer;
   border: 0;
+}
+
+.btn-submit{
+  margin-top: 10px;
 }
 
 .confirmation-message {
