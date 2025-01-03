@@ -249,7 +249,7 @@ main {
 }
 
 /** =========================================== */
-/** HERO MEDIA QUERIES **/
+/** HERO SECTION MEDIA QUERIES **/
 /** =========================================== */
 @media screen and (max-width: 768px) {
   
@@ -393,10 +393,10 @@ label,
 
 .requiredField {
   font-size: 0.6rem;
-  font-weight: 400;
+  font-weight: 600;
   font-style: italic;
   margin-left: 10px;
-  color: #e54858;
+  color: rgb(235, 207, 116);
 }
 
 .text-label {
@@ -451,6 +451,7 @@ input {
   margin-bottom: 0;
 }
 
+/*? Check use */
 /* 
 input[data-error]::after {
     content: attr(data-error);

@@ -69,7 +69,7 @@ function closeModal() {
 function checkFirstName() {
   if (!first.checkValidity()) {
     errorFirst.textContent =
-      "Veuillez entrer 2 caractères ou plus pour le champ du prénom"
+      "Veuillez entrer 2 caractères ou plus pour le prénom"
     first.classList.add("input-invalid")
     return false
   }
@@ -85,12 +85,12 @@ function checkFirstName() {
 function checkLastName() {
   if (!last.checkValidity()) {
     errorLast.textContent =
-      "Veuillez entrer 2 caractères ou plus pour le champ du prénom"
-    first.classList.add("input-invalid")
+      "Veuillez entrer 2 caractères ou plus pour le prénom"
+      last.classList.add("input-invalid")
     return false
   }
   errorLast.textContent = ""
-  first.classList.remove("input-invalid")
+  last.classList.remove("input-invalid")
   return true
 }
 
@@ -102,11 +102,11 @@ function checkEmail() {
   if (!email.checkValidity()) {
     errorEmail.textContent = "Veuillez entrer une adresse e-mail valide."
     isValid = false
-    first.classList.add("input-invalid")
+    email.classList.add("input-invalid")
     return false
   }
   errorEmail.textContent = ""
-  first.classList.remove("input-invalid")
+  email.classList.remove("input-invalid")
   return true
 }
 
@@ -117,11 +117,11 @@ function checkEmail() {
 function checkBirthdate() {
   if (!birthdate.checkValidity()) {
     errorBirthdate.textContent = "Vous devez entrer votre date de naissance."
-    first.classList.add("input-invalid")
+    birthdate.classList.add("input-invalid")
     return false
   }
   errorBirthdate.textContent = ""
-  first.classList.remove("input-invalid")
+  birthdate.classList.remove("input-invalid")
   return true
 }
 
@@ -132,11 +132,11 @@ function checkBirthdate() {
 function checkQuantity() {
   if (!quantity.checkValidity()) {
     errorQuantity.textContent = "Veuillez entrer un nombre entre 0 et 99."
-    first.classList.add("input-invalid")
+    quantity.classList.add("input-invalid")
     return false
   }
   errorQuantity.textContent = ""
-  first.classList.remove("input-invalid")
+  quantity.classList.remove("input-invalid")
   return true
 }
 

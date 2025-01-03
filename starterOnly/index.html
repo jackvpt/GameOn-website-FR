@@ -29,7 +29,7 @@
     <!-- ======================= -->
     <div class="topnav" id="myTopnav">
       <div class="header-logo">
-        <img alt="logo" src="./assets/images/Logo.png" width="auto" height="auto" />
+        <img alt="logo" src="./assets/images/Logo.png" />
       </div>
       <div class="main-navbar">
         <a href="#" class="active"><span>Accueil</span></a>
@@ -120,7 +120,7 @@
                   type="email"
                   id="email"
                   name="email"
-                  pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+                  pattern="^[-\w\.]+@([\w-]+\.)+[\w-]{2,4}$"
                   required
                   onblur="checkEmail();"
                 /><br />
