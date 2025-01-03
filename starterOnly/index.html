@@ -1,21 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="utf-8" />
     <title>Reservation</title>
     <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+    <!-- CSS -->
     <link rel="stylesheet" href="modal.css" />
-    <link href="./favicon.png" rel="icon" type="image/png">
+
+    <!-- App icon -->
+    <link href="./favicon.png" rel="icon" type="image/png" />
+
+    <!-- Font Awesome -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
+
+    <!-- Google fonts -->
     <link
       href="https://fonts.googleapis.com/css?family=DM+Sans"
       rel="stylesheet"
     />
   </head>
   <body>
+    <!-- ======================= -->
+    <!-- Navbar -->
+    <!-- ======================= -->
     <div class="topnav" id="myTopnav">
       <div class="header-logo">
         <img alt="logo" src="Logo.png" width="auto" height="auto" />
@@ -31,7 +42,11 @@
         </a>
       </div>
     </div>
+
     <main>
+      <!-- ======================= -->
+      <!-- Hero section -->
+      <!-- ======================= -->
       <div class="hero-section">
         <div class="hero-content">
           <h1 class="hero-headline">
@@ -50,6 +65,9 @@
         <button class="btn-signup modal-btn">je m'inscris</button>
       </div>
 
+      <!-- ======================= -->
+      <!-- Signup modal -->
+      <!-- ======================= -->
       <div class="bground">
         <div class="content">
           <span class="close" onclick="closeModal()"></span>
@@ -61,8 +79,10 @@
               onsubmit="return validate(event);"
               novalidate
             >
+              <!-- First name -->
               <div class="formData">
-                <label for="first">Prénom</label><span class="requiredField">(Champ obligatoire)</span><br />
+                <label for="first">Prénom</label
+                ><span class="requiredField">(Champ obligatoire)</span><br />
                 <input
                   class="text-control"
                   type="text"
@@ -75,8 +95,10 @@
                 <div class="error-message" id="error-first"></div>
               </div>
 
+              <!-- Last name -->
               <div class="formData">
-                <label for="last">Nom</label><span class="requiredField">(Champ obligatoire)</span><br />
+                <label for="last">Nom</label
+                ><span class="requiredField">(Champ obligatoire)</span><br />
                 <input
                   class="text-control"
                   type="text"
@@ -89,8 +111,10 @@
                 <div class="error-message" id="error-last"></div>
               </div>
 
+              <!-- Email -->
               <div class="formData">
-                <label for="email">E-mail</label><span class="requiredField">(Champ obligatoire)</span><br />
+                <label for="email">E-mail</label
+                ><span class="requiredField">(Champ obligatoire)</span><br />
                 <input
                   class="text-control"
                   type="email"
@@ -103,8 +127,10 @@
                 <div class="error-message" id="error-email"></div>
               </div>
 
+              <!-- Birth date -->
               <div class="formData">
-                <label for="birthdate">Date de naissance</label><span class="requiredField">(Champ obligatoire)</span><br />
+                <label for="birthdate">Date de naissance</label
+                ><span class="requiredField">(Champ obligatoire)</span><br />
                 <input
                   class="text-control"
                   type="date"
@@ -116,6 +142,7 @@
                 <div class="error-message" id="error-birthdate"></div>
               </div>
 
+              <!-- Quantity -->
               <div class="formData">
                 <label for="quantity"
                   >À combien de tournois GameOn avez-vous déjà participé
@@ -135,6 +162,7 @@
                 <div class="error-message" id="error-quantity"></div>
               </div>
 
+              <!-- Locations -->
               <p class="text-label">
                 A quel tournoi souhaitez-vous participer cette année ?
               </p>
@@ -180,6 +208,7 @@
                 <div class="error-message" id="error-location"></div>
               </div>
 
+              <!-- General conditions -->
               <div class="formData checkboxes">
                 <input
                   class="checkbox-input"
@@ -196,6 +225,7 @@
                 <div class="error-message" id="error-checkbox1"></div>
               </div>
 
+              <!-- Newsletter -->
               <div class="formData">
                 <input class="checkbox-input" type="checkbox" id="checkbox2" />
                 <label class="checkbox2-label" for="checkbox2">
@@ -204,9 +234,18 @@
                 >
               </div>
 
-              <input class="btn-submit modal-btn" type="submit" value="C'est parti" />
+              <!-- Submit button -->
+              <input
+                class="btn-submit modal-btn"
+                type="submit"
+                value="C'est parti"
+              />
             </form>
           </div>
+
+          <!-- ======================= -->
+          <!-- Submit modal -->
+          <!-- ======================= -->
           <div class="modal-body-submit">
             <p class="modal-text">
               Merci !<br /><br />Votre réservation a été reçue
@@ -221,9 +260,17 @@
         </div>
       </div>
     </main>
+
+    <!-- ======================= -->
+    <!-- Footer -->
+    <!-- ======================= -->
     <footer>
       <p class="copyrights">Copyright 2014 - 2022, GameOn Inc.</p>
     </footer>
+
+    <!-- ======================= -->
+    <!-- Scripts -->
+    <!-- ======================= -->
     <script src="modal.js"></script>
   </body>
 </html>
