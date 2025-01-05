@@ -14,7 +14,9 @@
   padding: 0;
 }
 
+/* =========================================== */
 /* Landing Page */
+/* =========================================== */
 
 body {
   margin: 0;
@@ -54,6 +56,7 @@ img {
 /* =========================================== */
 /* NAV BAR */
 /* =========================================== */
+
 .topnav {
   overflow: hidden;
   margin: 3.5%;
@@ -210,7 +213,7 @@ main {
 
 .hero-text {
   /* width: 146%; */
-  font-size:1.3rem;
+  font-size: 1.3rem;
   font-weight: normal;
   margin-top: 57px;
   padding: 0;
@@ -252,11 +255,11 @@ main {
 /** HERO SECTION MEDIA QUERIES **/
 /** =========================================== */
 @media screen and (max-width: 768px) {
-  
+
   .hero-section {
     display: block;
     box-shadow: unset;
-    min-height:0;
+    min-height: 0;
   }
 
   .hero-content {
@@ -282,7 +285,7 @@ main {
   .hero-text {
     width: unset;
     font-size: 0.8rem;
-    margin-top:10px;
+    margin-top: 10px;
   }
 
   .hero-img img {
@@ -297,8 +300,8 @@ main {
 
   .copyrights {
     text-align: center;
-    margin-top:0;
-    font-size:0.6rem;
+    margin-top: 0;
+    font-size: 0.6rem;
   }
 }
 
@@ -307,7 +310,7 @@ main {
 /* =========================================== */
 
 .modal-btn {
-  font-size:1.4rem;
+  font-size: 1.4rem;
   background: #fe142f;
   display: flex;
   margin: auto;
@@ -589,8 +592,8 @@ input[data-error]::after {
 /** SIGNUP MODAL MEDIA QUERIES **/
 /** =========================================== */
 @media screen and (max-width: 768px) {
-  .modal-btn{
-    font-size:0.8rem;
+  .modal-btn {
+    font-size: 0.8rem;
   }
 }
 
@@ -681,10 +684,6 @@ input[data-error]::after {
 .same-as-selected {
   background-color: rgba(0, 0, 0, 0.1);
 }
-
-
-
-
 
 /* =========================================== */
 /* FOOTER */

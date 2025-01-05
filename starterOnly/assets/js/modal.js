@@ -85,7 +85,7 @@ function checkFirstName() {
 function checkLastName() {
   if (!last.checkValidity()) {
     errorLast.textContent =
-      "Veuillez entrer 2 caractères ou plus pour le prénom"
+      "Veuillez entrer 2 caractères ou plus pour le nom"
       last.classList.add("input-invalid")
     return false
   }
@@ -100,8 +100,7 @@ function checkLastName() {
  */
 function checkEmail() {
   if (!email.checkValidity()) {
-    errorEmail.textContent = "Veuillez entrer une adresse e-mail valide."
-    isValid = false
+    errorEmail.textContent = "Veuillez entrer une adresse e-mail valide"
     email.classList.add("input-invalid")
     return false
   }
@@ -116,7 +115,7 @@ function checkEmail() {
  */
 function checkBirthdate() {
   if (!birthdate.checkValidity()) {
-    errorBirthdate.textContent = "Vous devez entrer votre date de naissance."
+    errorBirthdate.textContent = "Vous devez entrer votre date de naissance"
     birthdate.classList.add("input-invalid")
     return false
   }
@@ -131,7 +130,7 @@ function checkBirthdate() {
  */
 function checkQuantity() {
   if (!quantity.checkValidity()) {
-    errorQuantity.textContent = "Veuillez entrer un nombre entre 0 et 99."
+    errorQuantity.textContent = "Veuillez entrer un nombre entre 0 et 99"
     quantity.classList.add("input-invalid")
     return false
   }
@@ -162,7 +161,7 @@ function checkLocation() {
  */
 function checkConditions() {
   if (!checkbox1.checked) {
-    errorCheckbox1.textContent = "Vous devez accepter les termes et conditions."
+    errorCheckbox1.textContent = "Vous devez accepter les termes et conditions"
     return false
   }
   errorCheckbox1.textContent = ""
