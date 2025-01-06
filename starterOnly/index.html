@@ -120,7 +120,6 @@
                   type="email"
                   id="email"
                   name="email"
-                  pattern="^[-\w\.]+@([\w-]+\.)+[\w-]{2,4}$"
                   required
                   onblur="checkEmail();"
                 /><br />
@@ -129,14 +128,12 @@
 
               <!-- Birth date -->
               <div class="formData">
-                <label for="birthdate">Date de naissance</label
-                ><span class="requiredField">(Champ obligatoire)</span><br />
+                <label for="birthdate">Date de naissance</label><br />
                 <input
                   class="text-control"
                   type="date"
                   id="birthdate"
                   name="birthdate"
-                  required
                   onblur="checkBirthdate();"
                 /><br />
                 <div class="error-message" id="error-birthdate"></div>

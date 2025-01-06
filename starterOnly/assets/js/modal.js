@@ -19,6 +19,7 @@ const errorQuantity = document.getElementById("error-quantity")
 const errorLocation = document.getElementById("error-location")
 const checkbox1 = document.getElementById("checkbox1")
 const errorCheckbox1 = document.getElementById("error-checkbox1")
+const checkbox2 = document.getElementById("checkbox2")
 const closeBtn = document.getElementById("btn-close")
 
 setEventListeners()
@@ -84,9 +85,8 @@ function checkFirstName() {
  */
 function checkLastName() {
   if (!last.checkValidity()) {
-    errorLast.textContent =
-      "Veuillez entrer 2 caractères ou plus pour le nom"
-      last.classList.add("input-invalid")
+    errorLast.textContent = "Veuillez entrer 2 caractères ou plus pour le nom"
+    last.classList.add("input-invalid")
     return false
   }
   errorLast.textContent = ""
@@ -99,7 +99,9 @@ function checkLastName() {
  * @returns true if item is valid or false
  */
 function checkEmail() {
-  if (!email.checkValidity()) {
+  const emailPattern = new RegExp(email.pattern)
+
+  if (!email.checkValidity() || !emailPattern.test(email.value)) {
     errorEmail.textContent = "Veuillez entrer une adresse e-mail valide"
     email.classList.add("input-invalid")
     return false
@@ -114,7 +116,10 @@ function checkEmail() {
  * @returns true if item is valid or false
  */
 function checkBirthdate() {
-  if (!birthdate.checkValidity()) {
+  const birthdateValue = new Date(birthdate.value)
+  const birthdateIsValid = birthdateValue < new Date()
+
+  if (!birthdate.checkValidity() || !birthdateIsValid) {
     errorBirthdate.textContent = "Vous devez entrer votre date de naissance"
     birthdate.classList.add("input-invalid")
     return false
@@ -176,21 +181,28 @@ function checkConditions() {
 function validate(event) {
   event.preventDefault()
 
-  let isValid = true
+  if (
+    checkFirstName() &&
+    checkLastName() &&
+    checkEmail() &&
+    checkBirthdate() &&
+    checkQuantity() &&
+    checkLocation() &&
+    checkConditions()
+  ) {
+    console.log("First name :>> ", first.value)
+    console.log("Last name :>> ", last.value)
+    console.log("E-mail :>> ", email.value)
+    console.log("Quantity :>> ", quantity.value)
+    console.log(
+      "Location :>> ",
+      document.querySelector('input[name="location"]:checked').value
+    )
+    console.log("General conditions :>> ", checkbox1.checked)
+    console.log("Newsletter :>> ", checkbox2.checked)
 
-  if (!checkFirstName()) isValid = false
-  if (!checkLastName()) isValid = false
-  if (!checkEmail()) isValid = false
-  if (!checkBirthdate()) isValid = false
-  if (!checkQuantity()) isValid = false
-  if (!checkLocation()) isValid = false
-  if (!checkConditions()) isValid = false
-
-  if (isValid) {
-    document.forms["reserve"].reset() // Reset all fields
     modalBody.style.display = "none" // Hide the submit form
     modalBodySubmit.style.display = "flex" // Show the success message
+    document.forms["reserve"].reset() // Reset all fields
   }
-
-  return isValid
 }
