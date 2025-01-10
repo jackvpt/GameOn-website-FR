@@ -117,9 +117,9 @@ function checkEmail() {
  */
 function checkBirthdate() {
   const birthdateValue = new Date(birthdate.value)
-  const birthdateIsValid = birthdateValue < new Date()
+  const birthdateIsValid = birthdate.value === "" || birthdateValue < new Date()
 
-  if (!birthdate.checkValidity() || !birthdateIsValid) {
+  if (!birthdateIsValid) {
     errorBirthdate.textContent = "Vous devez entrer votre date de naissance"
     birthdate.classList.add("input-invalid")
     return false
